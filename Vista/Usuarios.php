@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Controlador/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Controlador/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="Controlador/assets/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="../Controlador/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Controlador/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Controlador/assets/css/jquery.dataTables.css">
 
     <title>Usuarios</title>
 </head>
@@ -66,10 +66,10 @@
             <button class="btn btn-success">AGREGAR</button>
         </div>
     </div>
-    <script src="Controlador/assets/js/jquery-1.11.3.min.js"></script>
-    <script src="Controlador/assets/js/bootstrap-table.min.js"></script>
-    <script src="Controlador/assets/js/bootstrap.min.js"></script>
-    <script src="Controlador/assets/js/jquery.dataTables.js"></script>
+    <script src="../Controlador/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../Controlador/assets/js/bootstrap-table.min.js"></script>
+    <script src="../Controlador/assets/js/bootstrap.min.js"></script>
+    <script src="../Controlador/assets/js/jquery.dataTables.js"></script>
     <script type="text/javascript">
         $(function() {
             $(".edit").click(function(e) {

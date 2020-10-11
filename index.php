@@ -6,8 +6,5 @@
     <title>Mierda</title>
 </head>
 <body>
-    <?php
-    require_once('Controlador/usuarioController.php')
-    ?>
 </body>
 </html>

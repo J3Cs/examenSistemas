@@ -1,20 +1,28 @@
 <?php
 
-class Conectar
+class Conexion
 {
-    public static function connectBD()
-    {
-        $user = 'root';
-        $pass = 'root';
 
+    private $user = 'root';
+    private $pass = 'root';
+    private $host = 'localhost';
+    private $db = 'usuarios';
+    private $connect;
+    
+    public function __construct()
+    {
+        $conStr = "mysql:host".$this->host.";dbname=".$this->db."charset=utf8";
         try {
-            $bd = new PDO('mysql:host=localhost;dbname=usuarios', $user, $pass);
-            $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $bd->exec('SET CHARACTER SET UTF8');
-            echo "Conectado";
+            $this->connect = new PDO($conStr, $this->user, $this->pass);
+            $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             print "ERROR: " . $e->getMessage() . '</br>';
             die('ERROR');
         }
     }
+
+    public function Connect(){
+        return $this->connect;
+    }
+    
 }
