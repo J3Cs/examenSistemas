@@ -1,33 +1,37 @@
 <?php
-class Usuario extends Conexion
+class Usuario
 {
     private $usuarios;
     private $roles;
     private $bd;
-
     public function __construct()
-    {   
-        $this->bd = new Conexion();
-        $this->bd = $this->bd->Connect();
+    {
+        require_once('Modelo/Conectar.php');
+        $this->bd = Conexion::conectar();
         $this->usuarios = array();
-        $this->roles = array();
+        $this->roles = array(array());
     }
 
 
     public function getUsuarios()
     {
-        $sql = "SELECT * FROM usuario";
-        $execute = $this->bd->query($sql);
-        $this->usuarios = $execute->fetchAll(PDO::FETCH_ASSOC);
-        return $this->usuarios;
-    }
 
+        $sql = "SELECT * FROM usuario";
+        $cons = $this->bd->query($sql);
+        while ($filas = $cons->fetch(PDO::FETCH_ASSOC) ) {
+            $this->usuarios[] = $filas;
+        }
+        return $this->usuarios;
+        //SELECT rol.nombre FROM rol INNER JOIN rol_usuario ON rol_usuario.id_rol=rol.id_rol INNER JOIN usuario ON rol_usuario.id_usuario = usuario.id_usuario WHERE usuario.id_usuario=2
+
+    }
     public function rol_usuario($id)
     {
-        $sql = "SELECT rol.nombre FROM rol INNER JOIN rol_usuario ON rol_usuario.id_rol=rol.id_rol
-        INNER JOIN usuario ON rol_usuario.id_usuario = usuario.id_usuario WHERE usuario.id_usuario = " . $id;
-        $execute = $this->bd->query($sql);
-        $this->roles = $execute->fetchAll(PDO::FETCH_ASSOC);
+        $this->roles=array();
+        foreach ($this->bd->query("SELECT rol.nombre FROM rol INNER JOIN rol_usuario ON rol_usuario.id_rol=rol.id_rol
+             INNER JOIN usuario ON rol_usuario.id_usuario = usuario.id_usuario WHERE usuario.id_usuario = " . $id) as $rol) {
+                $this->roles[] = $rol;
+        }
         return $this->roles;
     }
 }
