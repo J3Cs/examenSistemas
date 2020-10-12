@@ -23,6 +23,7 @@ if (!empty($_POST)) {
                 $_SESSION['nombre'] = $data['nombre'];
                 $_SESSION['telefono'] = $data['telefono'];
                 $_SESSION['correo'] = $data['correo'];
+                $_SESSION['conect'] = $data['ultima_conexion'];
                 echo "1";
             } else {
                 echo "error";
@@ -130,6 +131,8 @@ if (!empty($_POST)) {
 
     //Cerrar Sesion
     if ($_POST['action'] == 'close') {
+        $time = date('Y-m-d H,i,s', time());
+        $query = mysqli_query($conn, "UPDATE usuario SET ultima_conexion ='$time' WHERE rol_usuario = '$_SESSION[id_usuario]'");
         session_destroy();
     }
 }

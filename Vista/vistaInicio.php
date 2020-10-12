@@ -29,6 +29,7 @@
                 <h3>Informacion del Usuario</h3>
                 <label>Correo: </label><span><?php echo $_SESSION['correo'] ?></span>
                 <label>Telefono: </label><span><?php echo $_SESSION['telefono'] ?></span>
+                <label>Ultima Conexion: </label><span><?php echo $_SESSION['conect'] ?></span>
             </div>
         </div>
     </div>
