@@ -1,15 +1,16 @@
-<?php
+<?php 
 class Usuario
 {
     private $usuarios;
     private $roles;
+    private $rol;
     private $bd;
     public function __construct()
     {
-        require_once('Modelo/Conectar.php');
-        $this->bd = Conexion::conectar();
+        $this->bd = new PDO('mysql:host=localhost;dbname=usuarios', 'root', 'root');
         $this->usuarios = array();
         $this->roles = array(array());
+        $this->rol = array();
     }
 
 
@@ -17,14 +18,23 @@ class Usuario
     {
 
         $sql = "SELECT * FROM usuario";
-        $cons = $this->bd->query($sql);
-        while ($filas = $cons->fetch(PDO::FETCH_ASSOC) ) {
-            $this->usuarios[] = $filas;
+
+        foreach ($this->bd->query($sql) as $res) {
+            $this->usuarios[] = $res;
         }
         return $this->usuarios;
-        //SELECT rol.nombre FROM rol INNER JOIN rol_usuario ON rol_usuario.id_rol=rol.id_rol INNER JOIN usuario ON rol_usuario.id_usuario = usuario.id_usuario WHERE usuario.id_usuario=2
 
     }
+
+    public function getRoles(){
+        $sql = "SELECT * FROM rol";
+
+        foreach ($this->bd->query($sql) as $res) {
+            $this->rol[] = $res;
+        }
+        return $this->rol;
+    }
+
     public function rol_usuario($id)
     {
         $this->roles=array();
@@ -34,6 +44,8 @@ class Usuario
         }
         return $this->roles;
     }
+
+    
 }
 
 ?>
