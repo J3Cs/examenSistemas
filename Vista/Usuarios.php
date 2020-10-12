@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Controlador/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Controlador/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Controlador/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Controlador/assets/css/jquery.dataTables.css">
 
@@ -17,11 +17,11 @@
 <body>
     <header>
         <?php
-        include_once('navbar.php')
+        include_once('navbar.php');
         ?>
     </header>
     <?php
-    include_once('frmModal.php')
+    include_once('frmModal.php');
     ?>
     <h1 class="text-center mb-3 mt-4">Administrar Usuarios</h1>
     <div class="container">
@@ -48,10 +48,13 @@
                             <td>
                                 <?php
                                 $rol_us = $usuario->rol_usuario($us['id_usuario']);
+                                print_r($rol_us);
                                 if (count($rol_us) > 0) {
                                     foreach ($rol_us as $rol) {
                                         echo "<span class = 'badge' >" . $rol['nombre'] . "</span>";
                                     }
+                                }else{
+                                    echo "<span class = 'badge' >caca</span>";
                                 }
                                 ?>
                             </td>
