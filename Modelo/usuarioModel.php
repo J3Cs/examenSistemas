@@ -5,6 +5,8 @@ class Usuario
     private $roles;
     private $rol;
     private $bd;
+
+    //Constructor
     public function __construct()
     {
         $this->bd = new PDO('mysql:host=localhost;dbname=usuarios', 'root', 'root');
@@ -13,7 +15,7 @@ class Usuario
         $this->rol = array();
     }
 
-
+    //Obtiene todos los usuarios
     public function getUsuarios()
     {
 
@@ -25,7 +27,7 @@ class Usuario
         return $this->usuarios;
 
     }
-
+    //Obtiene todos los roles
     public function getRoles(){
         $sql = "SELECT * FROM rol";
 
@@ -34,7 +36,8 @@ class Usuario
         }
         return $this->rol;
     }
-
+    
+    //Obtiene todos los roles por usuario
     public function rol_usuario($id)
     {
         $this->roles=array();

@@ -5,8 +5,9 @@ if (!empty($_POST)) {
     session_start();
     $conn = mysqli_connect('localhost', 'root', 'root', 'usuarios');
 
+    //metodo para loguearse
     if ($_POST['action'] == 'login') {
-        //print_r($_POST);
+
         if (isset($_POST['usuario']) && isset($_POST['clave'])) {
             $user = mysqli_real_escape_string($conn, $_POST['usuario']);
             $pass = mysqli_real_escape_string($conn, $_POST['clave']);
@@ -91,7 +92,7 @@ if (!empty($_POST)) {
 
     //Editar un usuario
     if ($_POST['action'] == 'edit') {
-        //print_r($_POST);
+        
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $telefono = $_POST['telefono'];
@@ -126,6 +127,8 @@ if (!empty($_POST)) {
             echo 'Error objeto vacio';
         }
     }
+
+    //Cerrar Sesion
     if ($_POST['action'] == 'close') {
         session_destroy();
     }

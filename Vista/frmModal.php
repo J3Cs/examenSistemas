@@ -1,3 +1,4 @@
+<!--Modal para Editar Usuarios-->
 <div class="modal fade" tabindex="-1" role="dialog" id='frmModal'>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -42,7 +43,9 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<!--Modal para Editar Usuarios-->
 
+<!--Modal para Agregar Usuarios-->
 <div class="modal fade" tabindex="-1" role="dialog" id='frmAgg'>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -86,7 +89,9 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<!--Modal para Editar Usuarios-->
 
+<!--Modal para Eliminar Usuarios-->
 <div class="modal fade" tabindex="-1" role="dialog" id='frmDel'>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -107,3 +112,4 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<!--Modal para Editar Usuarios-->

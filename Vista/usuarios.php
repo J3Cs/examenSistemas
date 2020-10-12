@@ -45,6 +45,7 @@
                             <td><?php echo $us['telefono'] ?></td>
                             <td>
                                 <?php
+                                //Imprime los roles de cada usuario
                                 $rol_us = $usuario->rol_usuario($us['id_usuario']);
                                 if (count($rol_us) > 0) {
                                     foreach ($rol_us as $rol) {

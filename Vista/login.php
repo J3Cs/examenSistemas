@@ -1,4 +1,5 @@
 <?php
+//verifica si existe una sesion activa
 session_start();
 if (isset($_SESSION['active'])) {
     header('location: inicio.php');
