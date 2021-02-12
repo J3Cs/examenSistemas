@@ -1,9 +1,8 @@
 <?php
 
-
 if (!empty($_POST)) {
     session_start();
-    $conn = mysqli_connect('localhost', 'root', 'root', 'usuarios');
+    $conn = mysqli_connect('localhost', 'root', 'Rockheavymetal123@', 'usuarios');
 
     //metodo para loguearse
     if ($_POST['action'] == 'login') {

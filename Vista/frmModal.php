@@ -31,7 +31,7 @@
                         <div class="checkbox">
                             <?php foreach ($rol_us as $rol) : ?>
                                 <label>
-                                    <input type="checkbox" checked name="rol" value="<?php echo $rol['nombre'] ?>"><?php echo $rol['nombre'] ?><br>
+                                    <input type="checkbox" checked name="rol" value="<?php echo $rol[0] ?>"><?php echo $rol[0] ?><br>
                                 </label>
                             <?php endforeach ?>
                         </div>

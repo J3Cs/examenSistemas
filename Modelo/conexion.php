@@ -5,7 +5,7 @@ class Conectar
     public static function connectBD()
     {
         $user = 'root';
-        $pass = 'root';
+        $pass = 'Rockheavymetal123@';
 
         try {
             $bd = new PDO('mysql:host=localhost;dbname=usuarios', $user, $pass);

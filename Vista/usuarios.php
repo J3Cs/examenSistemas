@@ -47,9 +47,10 @@
                                 <?php
                                 //Imprime los roles de cada usuario
                                 $rol_us = $usuario->rol_usuario($us['id_usuario']);
+
                                 if (count($rol_us) > 0) {
                                     foreach ($rol_us as $rol) {
-                                        echo "<span class = 'badge' >" . $rol['nombre'] . "</span>";
+                                        echo "<span class='badge'>" . $rol[0] . "</span>";
                                     }
                                 }
                                 include_once('frmModal.php');
